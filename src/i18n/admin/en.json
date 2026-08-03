@@ -1,0 +1,90 @@
+{
+  "admin": {
+    "header": {
+      "subtitle": "King Faisal Hospital",
+      "title": "Administration Dashboard"
+    },
+    "sidebar": {
+      "title": "Operational Performance",
+      "capacity": "Operational Capacity",
+      "flow": "Patient Flow",
+      "wait": "Average Wait",
+      "waitValue": "12 min"
+    },
+    "metrics": {
+      "totalPatients": "Total Patients",
+      "activeDoctors": "Active Doctors",
+      "avgRating": "Average Rating",
+      "revenue": "Revenue",
+      "changeFromLastMonth": "↑ {{percent}} from last month",
+      "revenueValue": "1.2M SAR"
+    },
+    "charts": {
+      "departments": {
+        "title": "Most Visited Departments",
+        "subtitle": "Comparing visit volumes across main departments"
+      },
+      "doctors": {
+        "title": "Most Visited Doctors",
+        "subtitle": "Top doctors by monthly visit count"
+      }
+    },
+    "departments": {
+      "heart": "Cardiology",
+      "pediatrics": "Pediatrics",
+      "orthopedics": "Orthopedics",
+      "ent": "ENT",
+      "dermatology": "Dermatology"
+    },
+    "departmentDetails": {
+      "title": "Most Visited Departments - Detailed",
+      "subtitle": "Visit distribution by department with distinct colors",
+      "emergency": "Emergency",
+      "internal": "Internal Medicine",
+      "pediatrics": "Pediatrics",
+      "obgyn": "OB/GYN",
+      "cardiology": "Cardiology",
+      "surgery": "Surgery"
+    },
+    "doctors": {
+      "doctor1": "Dr. Ahmed Mohammed",
+      "doctor2": "Dr. Fatima Ali",
+      "doctor3": "Dr. Sara Al-Qahtani",
+      "doctor4": "Dr. Yasser Al-Nemr"
+    },
+    "insurance": {
+      "title": "Insurance / Self-Pay Ratio",
+      "insured": "Insured",
+      "selfPay": "Self-Pay"
+    },
+    "revenue": {
+      "title": "Revenue Breakdown",
+      "subtitle": "Revenue distribution by service source",
+      "surgeries": "Surgeries",
+      "consultations": "Consultations",
+      "labs": "Laboratory",
+      "imaging": "Imaging"
+    },
+    "topDoctors": {
+      "title": "Top Rated Doctors",
+      "subtitle": "Best doctors based on patient ratings",
+      "doctor1": "Dr. Ahmed Mohammed",
+      "doctor1Specialty": "Cardiology",
+      "doctor2": "Dr. Fatima Ali",
+      "doctor2Specialty": "Pediatrics",
+      "doctor3": "Dr. Sara Al-Qahtani",
+      "doctor3Specialty": "OB/GYN"
+    },
+    "visits": {
+      "title": "Visit Frequency",
+      "subtitle": "Returning patients count across months",
+      "jan": "January",
+      "feb": "February",
+      "mar": "March",
+      "apr": "April",
+      "may": "May",
+      "jun": "June"
+    }
+  }
+}
+
