@@ -1,4 +1,4 @@
-import { DollarSign, Star, TrendingUp, UserCheck2, Users } from 'lucide-react'
+import { ArrowUpRight, DollarSign, Star, UserCheck2, Users } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import Navbar from '../../components/Navbar'
 import { themes } from '../../themes'
@@ -85,8 +85,8 @@ const Admin = () => {
                   </div>
 
 <div className="mt-4 flex items-center gap-2 text-sm text-[#16A34A]">
-                    {change !== '★★★★★' && <TrendingUp size={16} />}
-                    <span className={change === '★★★★★' ? 'text-[#FACC15]' : ''}>{change}</span>
+{change !== '★★★★★' && <ArrowUpRight size={16} strokeWidth={3} />}
+                    {/* <span className={change === '★★★★★' ? 'text-[#FACC15]' : ''}>{change}</span> */}
                   </div>
                 </div>
               ))}

@@ -34,7 +34,9 @@ const AdminInsuranceChart = ({ theme }: AdminInsuranceChartProps) => {
         <h3 className="text-lg font-semibold text-white">
           {t('admin.insurance.title', 'نسبة التأمينات / الدفع الذاتي')}
         </h3>
-<ShieldCheck size={20} className="shrink-0 text-white" />
+<div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#3b82f6]/15 text-white">
+          <ShieldCheck size={18} />
+        </div>
       </div>
       <div className=" h-90">
         <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />

@@ -56,7 +56,7 @@ const Admin = () => {
     >
       <Navbar />
 
-      <main className="mx-auto max-w-8xl px-4 py-6 sm:px-6 lg:px-8 " dir={isRtl ? 'rtl' : 'ltr'}>
+      <main className="mx-auto max-w-8xl px-4 py-6 sm:px-6 lg:px-8  border-2 border-white/10" dir={isRtl ? 'rtl' : 'ltr'}>
           <section className="mb-5">
             <div className="">
               <AdminHeader theme={theme} />
@@ -85,7 +85,7 @@ const Admin = () => {
                   </div>
 
 <div className="mt-4 flex items-center gap-2 text-sm text-[#16A34A]">
-                    {change !== '★★★★★' && <TrendingUp size={16} />}
+                    <TrendingUp size={16} />
                     <span className={change === '★★★★★' ? 'text-[#FACC15]' : ''}>{change}</span>
                   </div>
                 </div>

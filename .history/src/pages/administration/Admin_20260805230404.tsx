@@ -1,4 +1,4 @@
-import { DollarSign, Star, TrendingUp, UserCheck2, Users } from 'lucide-react'
+import { ArrowUpRight, DollarSign, Star, UserCheck2, Users } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import Navbar from '../../components/Navbar'
 import { themes } from '../../themes'

@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { Building2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../themes'
 
@@ -44,7 +43,9 @@ const AdminDeptsBarChart = ({ theme }: AdminDeptsBarChartProps) => {
         <h3 className="text-lg font-semibold text-white">
           {t('admin.charts.departments.title', 'الأقسام الأكثر زيارة')}
         </h3>
-<Building2 size={20} className="shrink-0 text-white" />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#3b82f6]/15 text-[#3b82f6]">
+          <Building2 size={18} />
+        </div>
       </div>
       <p className="mt-1 text-sm text-white/70">
         {t('admin.charts.departments.subtitle', 'مقارنة أحجام الزيارات بين الأقسام الرئيسية')}

@@ -16,7 +16,7 @@
       "activeDoctors": "الأطباء النشطون",
       "avgRating": "متوسط التقييم",
       "revenue": "الإيرادات",
-      "changeFromLastMonth": " {{percent}} من الشهر الماضي",
+      "changeFromLastMonth": " من الشهر الماضي",
       "revenueValue": "1.2M ريال"
     },
     "charts": {

@@ -17,7 +17,7 @@ export const themes: Record<string, Theme> = {
   administration: {
   primary: '#010520',
 secondary: '#4E1171',
-section: '#342151',
+section: '#2D1E47',
 tertiary: '#250A45',
 mainColor: 'linear-gradient(180deg, #010520 0%, #4E1171 100%)',
   },

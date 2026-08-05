@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { ShieldCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../themes'
 
@@ -30,12 +29,9 @@ const AdminInsuranceChart = ({ theme }: AdminInsuranceChartProps) => {
 
   return (
     <div className="rounded-3xl border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
-<div className="flex items-center justify-between gap-3">
-        <h3 className="text-lg font-semibold text-white">
-          {t('admin.insurance.title', 'نسبة التأمينات / الدفع الذاتي')}
-        </h3>
-<ShieldCheck size={20} className="shrink-0 text-white" />
-      </div>
+      <h3 className="text-lg font-semibold text-white">
+        {t('admin.insurance.title', 'نسبة التأمينات / الدفع الذاتي')}
+      </h3>
       <div className=" h-90">
         <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
       </div>

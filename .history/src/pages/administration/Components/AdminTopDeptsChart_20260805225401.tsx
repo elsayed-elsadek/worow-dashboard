@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { PieChart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../themes'
 
@@ -48,7 +47,9 @@ const AdminTopDeptsChart = ({ theme }: AdminTopDeptsChartProps) => {
         <h3 className="text-lg font-semibold text-white">
           {t('admin.departmentDetails.title', 'الأقسام الأكثر زيارة - تفصيلي')}
         </h3>
-<PieChart size={20} className="shrink-0 text-white" />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#60a5fa]/15 text-[#60a5fa]">
+          <PieChart size={18} />
+        </div>
       </div>
       <p className="mt-1 text-sm text-white/70">
         {t('admin.departmentDetails.subtitle', 'توزيع الزيارات حسب القسم مع الألوان المميزة')}

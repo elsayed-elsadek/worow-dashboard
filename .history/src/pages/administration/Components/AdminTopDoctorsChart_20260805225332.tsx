@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { Stethoscope } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../themes'
 
@@ -44,7 +43,9 @@ const AdminTopDoctorsChart = ({ theme }: AdminTopDoctorsChartProps) => {
         <h3 className="text-lg font-semibold text-white">
           {t('admin.charts.doctors.title', 'الأطباء الأكثر زيارة')}
         </h3>
-<Stethoscope size={20} className="shrink-0 text-white" />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#00e676]/15 text-[#00e676]">
+          <Stethoscope size={18} />
+        </div>
       </div>
       <p className="mt-1 text-sm text-white/70">
         {t('admin.charts.doctors.subtitle', 'أعلى الأطباء من حيث عدد الزيارات الشهرية')}

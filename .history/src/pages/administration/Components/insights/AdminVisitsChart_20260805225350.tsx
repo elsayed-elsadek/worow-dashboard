@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { Repeat } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../../themes'
 
@@ -43,7 +42,9 @@ const AdminVisitsChart = ({ theme }: AdminVisitsChartProps) => {
         <h3 className="text-lg font-semibold text-white">
           {t('admin.visits.title', 'تكرار الزيارات')}
         </h3>
-<Repeat size={20} className="shrink-0 text-white" />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#a855f7]/15 text-[#a855f7]">
+          <Repeat size={18} />
+        </div>
       </div>
       <p className="mt-1 text-sm text-white/70">
         {t('admin.visits.subtitle', 'عدد المرضى العائدين عبر الأشهر')}

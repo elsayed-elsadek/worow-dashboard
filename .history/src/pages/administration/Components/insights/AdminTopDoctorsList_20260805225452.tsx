@@ -21,7 +21,9 @@ const AdminTopDoctorsList = ({ theme }: AdminTopDoctorsListProps) => {
         <h3 className="text-lg font-semibold text-white">
           {t('admin.topDoctors.title', 'الأطباء الأعلى تقييماً')}
         </h3>
-<Medal size={20} className="shrink-0 text-white" />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#f59e0b]/15 text-[#f59e0b]">
+          <Medal size={18} />
+        </div>
       </div>
       <p className="mt-1 text-sm text-white/70">
         {t('admin.topDoctors.subtitle', 'أفضل الأطباء بناءً على تقييمات المرضى')}

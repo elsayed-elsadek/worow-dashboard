@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { Wallet } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../../themes'
 
@@ -36,12 +35,9 @@ const AdminRevenueChart = ({ theme }: AdminRevenueChartProps) => {
 
   return (
     <div className="rounded-3xl border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
-<div className="flex items-center justify-between gap-3">
-        <h3 className="text-lg font-semibold text-white">
-          {t('admin.revenue.title', 'تفصيل الإيرادات')}
-        </h3>
-<Wallet size={20} className="shrink-0 text-white" />
-      </div>
+      <h3 className="text-lg font-semibold text-white">
+        {t('admin.revenue.title', 'تفصيل الإيرادات')}
+      </h3>
       <p className="mt-1 text-sm text-white/70">
         {t('admin.revenue.subtitle', 'توزيع الإيرادات حسب مصدر الخدمة')}
       </p>

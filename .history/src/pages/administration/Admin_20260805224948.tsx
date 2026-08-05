@@ -85,7 +85,7 @@ const Admin = () => {
                   </div>
 
 <div className="mt-4 flex items-center gap-2 text-sm text-[#16A34A]">
-                    {change !== '★★★★★' && <TrendingUp size={16} />}
+                    <TrendingUp size={16} />
                     <span className={change === '★★★★★' ? 'text-[#FACC15]' : ''}>{change}</span>
                   </div>
                 </div>
