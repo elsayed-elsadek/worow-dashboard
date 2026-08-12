@@ -1,6 +1,5 @@
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
-import { PieChart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Theme } from '../../../themes'
 
@@ -13,48 +12,88 @@ const AdminTopDeptsChart = ({ theme }: AdminTopDeptsChartProps) => {
 
   const option: EChartsOption = {
     tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-    grid: { left: 8, right: 16, top: 20, bottom: 24 },
+    legend: {
+      bottom: 0,
+      left: 'center',
+      textStyle: { color: '#ffffff' },
+      data: [{ name: t('admin.departmentDetails.patients', 'المرضى'), icon: 'circle' }],
+    },
+    grid: { left: '12%', right: '8%', top: '8%', bottom: '18%' },
     xAxis: {
       type: 'value',
+      name: t('admin.departmentDetails.patientCount', 'عدد المرضى'),
+      nameLocation: 'middle',
+      nameGap: 30,
+      nameTextStyle: { color: '#ffffffcc', fontSize: 12 },
       axisLabel: { color: '#ffffff99' },
-      splitLine: { lineStyle: { color: 'rgba(255,255,255,0.08)' } },
+      splitLine: {
+        show: true,
+        lineStyle: { color: 'rgba(255, 255, 255, 0.15)' },
+      },
     },
     yAxis: {
       type: 'category',
-      data: [t('admin.departmentDetails.emergency', 'طوارئ'), t('admin.departmentDetails.internal', 'باطنة'), t('admin.departmentDetails.pediatrics', 'أطفال'), t('admin.departmentDetails.obgyn', 'نساء وولادة'), t('admin.departmentDetails.cardiology', 'قلب'), t('admin.departmentDetails.surgery', 'جراحة')],
+      inverse: true, // لترتيب الأقسام من الأعلى للأسفل (طوارئ أولاً)
+      data: [
+        t('admin.departmentDetails.emergency', 'طوارئ'),
+        t('admin.departmentDetails.internal', 'باطنة'),
+        t('admin.departmentDetails.pediatrics', 'أطفال'),
+        t('admin.departmentDetails.obgyn', 'نساء وولادة'),
+        t('admin.departmentDetails.cardiology', 'قلب'),
+        t('admin.departmentDetails.surgery', 'جراحة'),
+      ],
       axisLabel: { color: '#ffffffcc' },
       axisLine: { show: false },
       axisTick: { show: false },
     },
     series: [
       {
+        name: t('admin.departmentDetails.patients', 'المرضى'),
         type: 'bar',
         data: [520, 380, 290, 250, 180, 150],
-        barWidth: 18,
-        label: { show: true, position: 'right', color: '#ffffff' },
+        barWidth: 16,
+        label: {
+          show: true,
+          position: 'insideRight',
+          color: '#ffffff',
+          fontWeight: 'bold',
+          offset: [-5, 0],
+        },
         itemStyle: {
           color: (params) => {
-            const colors = ['#60a5fa', '#34d399', '#f59e0b', '#ef4444', '#a855f7', '#22d3ee']
+            const colors = [
+              '#3b82f6', // طوارئ - أزرق
+              '#10b981', // باطنة - أخضر
+              '#f59e0b', // أطفال - برتقالي
+              '#ef4444', // نساء وولادة - أحمر
+              '#8b5cf6', // قلب - بنفسجي
+              '#06b6d4', // جراحة - سماوي
+            ]
             return colors[(params.dataIndex ?? 0) % colors.length]
           },
+          borderRadius: [0, 2, 2, 0],
         },
       },
     ],
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
-<div className="flex items-center justify-between gap-3">
-        <h3 className="text-lg font-semibold text-white">
-          {t('admin.departmentDetails.title', 'الأقسام الأكثر زيارة - تفصيلي')}
+    <div
+      className="rounded-2xl border border-white/30 p-4 shadow-xl shadow-black/20 "
+      style={{ background: theme.section }}
+    >
+      {/* Header Centered */}
+      <div className="mb-6 text-center">
+        <h3 className="text-xl font-bold text-white">
+          {t('admin.departmentDetails.title', 'الأقسام الأكثر زيارة')}
         </h3>
-<PieChart size={20} className="shrink-0 text-white" />
       </div>
-      <p className="mt-1 text-sm text-white/70">
-        {t('admin.departmentDetails.subtitle', 'توزيع الزيارات حسب القسم مع الألوان المميزة')}
-      </p>
-      <div className="mt-4 h-70">
-        <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
+
+      {/* Inner Chart Container Box */}
+      <div className=" border md:w-2/3 w-full border-white/10 bg-white/5 p-4 backdrop-blur-sm m-auto">
+        <div className="h-80 w-full">
+          <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
+        </div>
       </div>
     </div>
   )

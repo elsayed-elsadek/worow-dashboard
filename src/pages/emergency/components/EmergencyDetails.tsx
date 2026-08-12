@@ -23,7 +23,7 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
   ]
 
   return (
-    <aside className="w-full space-y-4 border-1 border-gray-600 border-r-white  p-4 text-white  "
+    <aside className="w-full space-y-4 border border-gray-600 border-r-white  p-4 text-white  "
      style={{ background: theme.secondary }}
     >
       {/* Title */}
@@ -33,15 +33,15 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
 
       {/* Main Incident Card */}
       <div className="rounded-xl border border-[#f1b3bc]  p-4 shadow-sm"
-     style={{ background: theme.section }}
+     style={{ background: theme.section }} 
       >
         {/* Card Header: Badge & Report ID */}
         <div className="flex items-center justify-between pb-2">
           
-          <span className="text-sm font-semibold text-gray-200">
+          <span className="text-sm font-semibold text-white">
             {t('emergency.reportBadge', 'البلاغ # 1247')}
           </span>
-          <span className="rounded-full bg-[#f1b3bc] px-3 py-1 text-xs font-bold text-[#800f1c]">
+          <span className="rounded-full bg-[#FEE2E2] px-3 py-1 text-[16px] font-black  text-[#991B1B]">
             {t('emergency.severityHigh', 'عالي الخطورة')}
           </span>
         </div>
@@ -51,16 +51,16 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
           <h3 className="text-xl font-bold text-white">
             {t('emergency.caseTitle', 'غياب وعي')}
           </h3>
-          <p className="mt-1 text-sm font-semibold text-gray-200 leading-relaxed">
+          <p className="mt-1 text-sm font-semibold text-white leading-relaxed">
             {t('emergency.patientDescription', 'المريض: رجل في الأربعينيات، فقدان مفاجئ للوعي')}
           </p>
         </div>
 
         {/* Incident Key-Value Details */}
-        <div className="mt-4 space-y-2 text-sm font-semibold">
+        <div className="mt-4 space-y-2 text-sm font-semibold" >
           {details.map((item) => (
-            <div key={item.label} className="flex justify-between items-center text-gray-200">
-              <span className="text-gray-200">{item.value}</span>
+            <div key={item.label} className="flex justify-between text-start  items-center text-gray-200">
+              <span className="text-white ">{item.value}</span> 
               <span className="text-white font-bold">{item.label}</span>
 
             </div>
@@ -78,8 +78,8 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
         </h4>
         <div className="space-y-2 text-sm font-semibold">
           {callerDetails.map((item) => (
-            <div key={item.label} className="flex justify-between items-center text-gray-200">
-              <span className="text-gray-200">{item.value}</span>
+            <div key={item.label} className="flex justify-between items-center text-gray-200 text-start" >
+              <span className="text-gray-200" >{item.value}</span> 
               <span className="text-white font-bold">{item.label}</span>
 
             </div>
@@ -92,7 +92,7 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
         {/* Approve Button */}
         <button
           type="button"
-          className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#16A34A]/20 py-3 text-base font-bold text-white transition hover:bg-[#325236]"
+          className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 p-4 shadow-xl shadow-black/20 bg-[#16A34A]/20 py-3 text-base font-bold text-white transition hover:bg-[#325236]"
         >
           <span>{t('emergency.actionApprove', 'موافقة على الحالة')}</span>
           <span className="text-lg">✓</span>
@@ -101,7 +101,7 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
         {/* Call Button */}
         <button
           type="button"
-          className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#EAB308]/20 py-3 text-base font-bold text-white transition hover:bg-[#6e4623]"
+          className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 p-4 shadow-xl shadow-black/20 bg-[#EAB308]/20 py-3 text-base font-bold text-white transition hover:bg-[#6e4623]"
         >
           <span>{t('emergency.actionCall', 'الاتصال بالمبلغ')}</span>
           <span className="text-base">📞</span>
@@ -111,7 +111,7 @@ const EmergencyDetails = ({ theme }: EmergencyDetailsProps) => {
         {/* Reject Button */}
         <button
           type="button"
-          className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#FF4242]/40 py-3 text-base font-bold text-white transition hover:bg-[#a1303a]"
+          className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 p-4 shadow-xl shadow-black/20 bg-[#FF4242]/40 py-3 text-base font-bold text-white transition hover:bg-[#a1303a]"
         >
           <span>{t('emergency.actionReject', 'رفض البلاغ')}</span>
           <span className="text-base">✕</span>

@@ -43,10 +43,10 @@ const Pagination = ({
           key={page}
           type="button"
           onClick={() => goToPage(page)}
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl border text-sm font-semibold transition ${
+          className={`flex h-10 w-10 items-center justify-center rounded-xl border text-sm font-semibold transition ${
           
             page === currentPage
-              ? 'border-emerald-500 bg-emerald-500 text-white shadow-lg shadow-emerald-500/30'
+              ? 'border-emerald-500 bg-[#37DC63]/40 text-white shadow-lg shadow-emerald-500/30'
               : 'border-white/20 bg-white/10 text-white/80 hover:bg-white/20'
           }`}
        

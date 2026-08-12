@@ -27,13 +27,13 @@ const Emergency = () => {
 
             <EmergencyDetails theme={theme} />
 
-            <section className="flex flex-col gap-4 border border-gray-500 rounded-3xl p-4 shadow-lg shadow-black/20"
+            <section className="flex flex-col gap-4 border border-gray-500 rounded-2xl py-4 "
             style={{ background: theme.secondary }}
             >
 
               <Header  theme={theme} activeFilters={activeFilters} onToggleFilter={toggleFilter} />
 
-              <EmergencyMap theme={theme} activeFilters={activeFilters} />
+              <EmergencyMap activeFilters={activeFilters} />
 
             </section>
 

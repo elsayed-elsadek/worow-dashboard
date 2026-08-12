@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import i18n from '../i18n'
-import logo from '../assets/logo.webp' // استيراد شعار
-import avatar from '../assets/images.webp' // استيراد صورة الأفاتار
-import NotificationModal, { type NotificationItem } from './NotificationModal'
-import SharedPadding from './SharedPadding'
+import i18n from '../../../i18n'
+import logo from '../../../assets/logo.webp' // استيراد شعار
+import avatar from '../../../assets/admin.webp' // استيراد صورة الأفاتار
+import NotificationModal, { type NotificationItem } from '../../../components/NotificationModal'
+import SharedPadding from '../../../components/SharedPadding'
 
-function Navbar() {
+function AdminNavbar() {
   const { t, i18n: i18nInstance } = useTranslation()
   const currentCode = (i18nInstance.language || i18n.language).startsWith('ar') ? 'ar' : 'en'
 
@@ -51,31 +51,44 @@ function Navbar() {
   return (
     <SharedPadding as="header" variant="navbar" className="w-full text-white  dir-rtl">
       {/* Upper Navigation Row */}
-      <div className="mx-auto flex flex-col-reverse items-center justify-between gap-4 pb-3 sm:flex-row">
+      <div className="mx-auto flex flex-col-reverse items-center justify-between gap-4 pb-3 sm:flex-row py-6">
         
         {/* User profile & Controls Group */}
         <div className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-start sm:gap-4">
           
           {/* Doctor Info */}
           <div className="flex items-center gap-2.5">
-          
-            <div className="text-right">
-              <p className="text-xs font-bold leading-tight text-white sm:text-sm">
-                {t('emergency.doctorName', 'د. فاطمة الزهراني')}
-              </p>
-              <p className=" text-white font-bold sm:text-xs">
-                {t('emergency.doctorRole', 'طبيب طوارئ')}
-              </p>
-            </div>
-              <img
+            <img
               src={avatar || 'https://via.placeholder.com/40'}
               alt="Doctor Avatar"
               className="h-9 w-9 rounded-full border border-white/20 object-cover sm:h-10 sm:w-10"
             />
+           
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Notifications Button */}
+           
+
+            {/* Language Selector */}
+            <div className="flex items-center gap-1.5 text-xs font-medium  px-2 py-1 rounded-lg">
+              <button
+                type="button"
+                onClick={() => setLanguage('ar')}
+                className={`transition px-1 ${currentCode === 'ar' ? 'font-bold text-[#00bcd4]' : 'text-gray-400 hover:text-white'}`}
+              >
+                العربية
+              </button>
+              <span className="text-gray-500 text-[10px]">|</span>
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`transition px-1 ${currentCode === 'en' ? 'font-bold text-[#00bcd4]' : 'text-gray-400 hover:text-white'}`}
+              >
+                EN
+              </button>
+            </div>
+
+             {/* Notifications Button */}
             <div className="relative flex items-center">
               <button
                 type="button"
@@ -100,25 +113,6 @@ function Navbar() {
                 onMarkAllRead={markAllAsRead}
               />
             </div>
-
-            {/* Language Selector */}
-            <div className="flex items-center gap-1.5 text-xs font-medium  px-2 py-1 rounded-lg">
-              <button
-                type="button"
-                onClick={() => setLanguage('ar')}
-                className={`transition px-1 ${currentCode === 'ar' ? 'font-bold text-[#00bcd4]' : 'text-gray-400 hover:text-white'}`}
-              >
-                العربية
-              </button>
-              <span className="text-gray-500 text-[10px]">|</span>
-              <button
-                type="button"
-                onClick={() => setLanguage('en')}
-                className={`transition px-1 ${currentCode === 'en' ? 'font-bold text-[#00bcd4]' : 'text-gray-400 hover:text-white'}`}
-              >
-                EN
-              </button>
-            </div>
           </div>
 
         </div>
@@ -139,4 +133,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default AdminNavbar

@@ -7,13 +7,13 @@ const EmergencyHeader = () => {
   return (
     <div className="mb-5">
           {/* Emergency System Sub-Header */}
-      <div className="mx-auto rounded-xl bg-[#3C1B21]/80 px-3 py-3 sm:px-6 sm:py-4 shadow-inner border border-b-2 border-gray-500 border-b-[#AF1E31]">
+      <div className="mx-auto  bg-[#3C1B21]/80 px-3 py-3 sm:px-6 sm:py-4 shadow-inner border border-b-2 border-gray-500 border-b-[#AF1E31]">
         <div className="flex items-center justify-end gap-3">
           <div className="text-right">
-            <h1 className="text-base font-bold leading-tight text-white sm:text-lg mb-0.5">
+            <h1 className=" font-bold leading-tight text-white text-[28px]">
               {t('emergency.systemTitle', 'نظام الطوارئ')}
             </h1>
-            <p className="text-[11px] sm:text-xs text-white/80 font-medium">
+            <p className="text-[17px] text-white font-bold p-0 m-0">
               {t('emergency.systemSubtitle', 'مركز إدارة البلاغات الطبية')}
             </p>
           </div>

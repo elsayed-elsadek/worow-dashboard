@@ -38,17 +38,17 @@ const AdminVisitsChart = ({ theme }: AdminVisitsChartProps) => {
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
-<div className="flex items-center justify-between gap-3">
+    <div className="h-full rounded-2xl border border-white/30 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
+      <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold text-white">
           {t('admin.visits.title', 'تكرار الزيارات')}
         </h3>
 <Repeat size={20} className="shrink-0 text-white" />
       </div>
-      <p className="mt-1 text-sm text-white/70">
+      {/* <p className="mt-1 text-sm text-white/70">
         {t('admin.visits.subtitle', 'عدد المرضى العائدين عبر الأشهر')}
-      </p>
-      <div className="mt-4 h-70">
+      </p> */}
+      <div className="mt-4 h-[16rem]">
         <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
       </div>
     </div>

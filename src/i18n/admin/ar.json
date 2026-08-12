@@ -15,9 +15,9 @@
       "totalPatients": "إجمالي المرضى",
       "activeDoctors": "الأطباء النشطون",
       "avgRating": "متوسط التقييم",
-      "revenue": "الإيرادات",
+      "revenue": " الإيرادات (ريال) ",
       "changeFromLastMonth": " {{percent}} من الشهر الماضي",
-      "revenueValue": "1.2M ريال"
+      "revenueValue": "1.2M "
     },
     "charts": {
       "departments": {
@@ -37,14 +37,16 @@
       "dermatology": "الجلدية"
     },
     "departmentDetails": {
-      "title": "الأقسام الأكثر زيارة - تفصيلي",
+      "title": "الأقسام الأكثر زيارة ",
       "subtitle": "توزيع الزيارات حسب القسم مع الألوان المميزة",
       "emergency": "طوارئ",
       "internal": "باطنة",
       "pediatrics": "أطفال",
       "obgyn": "نساء وولادة",
       "cardiology": "قلب",
-      "surgery": "جراحة"
+      "surgery": "جراحة",
+      "patients": "المرضى",
+      "patientCount": "عدد المرضى"
     },
     "doctors": {
       "doctor1": "د. أحمد محمد",

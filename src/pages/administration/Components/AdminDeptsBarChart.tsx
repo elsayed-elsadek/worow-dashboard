@@ -39,16 +39,16 @@ const AdminDeptsBarChart = ({ theme }: AdminDeptsBarChartProps) => {
   }
 
   return (
-    <div className="rounded-[24px] border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
+    <div className="rounded-2xl border border-white/30 p-4 shadow-xl shadow-black/20 " style={{ background: theme.section }}>
 <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold text-white">
           {t('admin.charts.departments.title', 'الأقسام الأكثر زيارة')}
         </h3>
 <Building2 size={20} className="shrink-0 text-white" />
       </div>
-      <p className="mt-1 text-sm text-white/70">
+      {/* <p className="mt-1 text-sm text-white/70">
         {t('admin.charts.departments.subtitle', 'مقارنة أحجام الزيارات بين الأقسام الرئيسية')}
-      </p>
+      </p> */}
       <div className="mt-4 h-[280px]">
         <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
       </div>

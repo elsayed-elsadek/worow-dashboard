@@ -39,17 +39,17 @@ const AdminTopDoctorsChart = ({ theme }: AdminTopDoctorsChartProps) => {
   }
 
   return (
-    <div className="rounded-[24px] border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
+    <div className="rounded-2xl border border-white/30 p-4 shadow-xl shadow-black/20 " style={{ background: theme.section }}>
 <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold text-white">
           {t('admin.charts.doctors.title', 'الأطباء الأكثر زيارة')}
         </h3>
 <Stethoscope size={20} className="shrink-0 text-white" />
       </div>
-      <p className="mt-1 text-sm text-white/70">
+      {/* <p className="mt-1 text-sm text-white/70">
         {t('admin.charts.doctors.subtitle', 'أعلى الأطباء من حيث عدد الزيارات الشهرية')}
-      </p>
-      <div className="mt-4 h-[280px]">
+      </p> */}
+      <div className="mt-4 h-70">
         <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
       </div>
     </div>

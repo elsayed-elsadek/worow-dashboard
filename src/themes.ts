@@ -17,16 +17,14 @@ export const themes: Record<string, Theme> = {
   administration: {
   primary: '#010520',
 secondary: '#4E1171',
-section: '#342151',
-tertiary: '#250A45',
-mainColor: 'linear-gradient(180deg, #010520 0%, #4E1171 100%)',
-  },
+section: 'rgba(255, 255, 255, 0.1)',tertiary: '#250A45',
+mainColor: 'linear-gradient(180deg, #010520 0%, #4E1171 80%)',  },
 insurance: {
   primary: '#01201A',
   secondary: '#07292C',
   tertiary: '#0A7062',
   section: '#193222',
-  mainColor: 'linear-gradient(180deg, #01201A 0%, #07292C 60%, #0A7062 100%)',
+  mainColor: 'linear-gradient(180deg, #01201A 0%, #07292C 70%, #0A7062 100%)',
 },
 };
 

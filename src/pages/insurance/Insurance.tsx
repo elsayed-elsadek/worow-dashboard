@@ -73,7 +73,9 @@ const Insurance = () => {
       dir="rtl"
       style={{
         background: theme.mainColor,
-        fontFamily: 'Cairo, Tajawal, "IBM Plex Sans Arabic", sans-serif',
+        backgroundAttachment: 'fixed',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
       }}
     >
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-4 py-4 lg:flex-row lg:px-6 lg:py-6">

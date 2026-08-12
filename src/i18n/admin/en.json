@@ -44,7 +44,9 @@
       "pediatrics": "Pediatrics",
       "obgyn": "OB/GYN",
       "cardiology": "Cardiology",
-      "surgery": "Surgery"
+      "surgery": "Surgery",
+      "patientCount": "Patient Count",
+      "patients": "Patients"
     },
     "doctors": {
       "doctor1": "Dr. Ahmed Mohammed",

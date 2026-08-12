@@ -16,28 +16,30 @@ const Header = ({ theme, activeFilters, onToggleFilter }: HeaderProps) => {
   const [filterOpen, setFilterOpen] = useState(false)
 
   return (
-    <div className="relative  px-4 py-4 "
+    <div className="relative px-4 py-2"
     style={{ background: theme.secondary }}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
  <button
             type="button"
             onClick={() => window.location.reload()}
-            className="flex items-center cursor-pointer gap-2 rounded-full px-3 py-2 text-sm font-medium text-white transition bg-[#F3F4F6]/20 border border-gray-500  hover:opacity-90"
+            className="flex items-center cursor-pointer gap-2 rounded-xl px-4 py-2 text-sm font-medium text-white transition bg-[#F3F4F6]/20 border border-gray-500  hover:opacity-90"
             
           >
-            <RefreshCw size={16} />
             {t('emergency.refresh')}
+            <RefreshCw size={16} />
+
           </button>
 
           <div className="relative">
             <button
               type="button"
               onClick={() => setFilterOpen((prev) => !prev)}
-              className="flex  cursor-pointer items-center gap-2 rounded-full bg-[#1E40AF]/20 border border-white/10 px-3 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+              className="flex  cursor-pointer items-center gap-2 rounded-xl bg-[#1E40AF]/20 border border-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
             >
-              <Filter size={16} />
               {t('emergency.filters')}
+              <Filter size={16} />
+
             </button>
             <FilterModal
               open={filterOpen}

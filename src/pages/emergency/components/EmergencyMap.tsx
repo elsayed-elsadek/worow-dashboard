@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import * as maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import type { Theme } from '../../../themes'
 
 export type EmergencyFilterKey = 'high' | 'medium' | 'low' | 'hospital'
 export type EmergencyFilterState = Record<EmergencyFilterKey, boolean>
@@ -15,11 +14,10 @@ export const initialEmergencyFilters: EmergencyFilterState = {
 }
 
 interface EmergencyMapProps {
-  theme: Theme
   activeFilters: EmergencyFilterState
 }
 
-const EmergencyMap = ({ theme, activeFilters }: EmergencyMapProps) => {
+const EmergencyMap = ({ activeFilters }: EmergencyMapProps) => {
   const { t } = useTranslation()
   const mapContainer = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
@@ -179,7 +177,7 @@ const EmergencyMap = ({ theme, activeFilters }: EmergencyMapProps) => {
   }, [activeFilters])
 
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#2a151b]/90 shadow-2xl shadow-black/20">
+    <div className="relative overflow-hidden  border-t-2 border-white bg-[#2a151b]/90 ">
       {showFallback ? (
         <div className="flex h-[420px] w-full items-center justify-center overflow-hidden bg-[#12070b]">
           <svg viewBox="0 0 600 420" className="h-full w-full object-cover">
@@ -200,13 +198,13 @@ const EmergencyMap = ({ theme, activeFilters }: EmergencyMapProps) => {
       ) : (
         <div ref={mapContainer} className="h-[420px] min-h-[420px] w-full" />
       )}
-      <div className="pointer-events-none absolute right-4 top-4 rounded-2xl border border-white/10 bg-[#1b0c10]/90 p-3 text-sm text-white shadow-lg backdrop-blur" style={{ background: theme.mainColor, direction: 'rtl' }}>
-        <p className="mb-2 font-semibold text-right">{t('emergency.mapLegendTitle')}</p>
-        <div className="space-y-2 text-xs text-[#e0d3d4]">
+      <div className="pointer-events-none absolute right-4 top-4 rounded-xl border border-white/30 bg-white p-3 text-sm text-white shadow-lg backdrop-blur" style={{ direction: 'rtl' }}>
+        <p className="mb-2 font-bold text-center text-[#0E8787]">{t('emergency.mapLegendTitle')}</p>
+        <div className="space-y-2 text-xs font-bold text-[#0E8787]">
           <div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-[#d32f2f]" />{t('emergency.mapLegendHigh')}</div>
           <div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-[#fbc02d]" />{t('emergency.mapLegendMedium')}</div>
           <div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-[#388e3c]" />{t('emergency.mapLegendLow')}</div>
-          <div className="flex items-center gap-2"><span className="text-[#1e88e5]">✚</span>{t('emergency.mapLegendHospital')}</div>
+          <div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-[#1E40AF]" />{t('emergency.mapLegendHospital')}</div>
         </div>
       </div>
       <div className="pointer-events-none absolute bottom-4 right-4 rounded-2xl border border-white/10 bg-[#1b0c10]/80 px-4 py-3 text-sm text-white backdrop-blur">

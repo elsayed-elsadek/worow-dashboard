@@ -15,12 +15,15 @@ const AdminRevenueChart = ({ theme }: AdminRevenueChartProps) => {
     tooltip: { trigger: 'item' },
     legend: {
       top: 'bottom',
-      textStyle: { color: '#ffffffcc' },
+      itemGap: 12,
+      textStyle: { color: '#ffffffcc', fontSize: 12 },
     },
     series: [
       {
         type: 'pie',
-        radius: ['45%', '75%'],
+        // تصغير الأقطار الخارجية والداخلية للرسم البياني
+        radius: ['30%', '55%'],
+        center: ['50%', '38%'],
         data: [
           { value: 45, name: t('admin.revenue.surgeries', 'العمليات الجراحية') },
           { value: 30, name: t('admin.revenue.consultations', 'الاستشارات') },
@@ -28,24 +31,28 @@ const AdminRevenueChart = ({ theme }: AdminRevenueChartProps) => {
           { value: 10, name: t('admin.revenue.imaging', 'الأشعة') },
         ],
         color: ['#3b82f6', '#00e676', '#f59e0b', '#a855f7'],
-        label: { color: '#ffffff' },
+        label: {
+          color: '#ffffff',
+          fontSize: 11,
+        },
         emphasis: { scale: true },
       },
     ],
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 p-4 shadow-xl shadow-black/20" style={{ background: theme.section }}>
-<div className="flex items-center justify-between gap-3">
+    <div
+      className="flex h-full flex-col justify-between rounded-2xl border border-white/30 p-4 shadow-xl shadow-black/20"
+      style={{ background: theme.section }}
+    >
+      <div className="flex items-center justify-between gap-3">
         <h3 className="text-lg font-semibold text-white">
           {t('admin.revenue.title', 'تفصيل الإيرادات')}
         </h3>
-<Wallet size={20} className="shrink-0 text-white" />
+        <Wallet size={20} className="shrink-0 text-white" />
       </div>
-      <p className="mt-1 text-sm text-white/70">
-        {t('admin.revenue.subtitle', 'توزيع الإيرادات حسب مصدر الخدمة')}
-      </p>
-      <div className=" h-96 w-full">
+
+      <div className="flex-1 w-full min-h-[200px]">
         <ReactECharts option={option} style={{ height: '100%', width: '100%' }} />
       </div>
     </div>
