@@ -196,7 +196,7 @@ const EmergencyMap = ({ activeFilters }: EmergencyMapProps) => {
           </svg>
         </div>
       ) : (
-        <div ref={mapContainer} className="h-[520px] min-h-[420px] w-full" />
+        <div ref={mapContainer} className="h-[420px] min-h-[420px] w-full" />
       )}
       <div className="pointer-events-none absolute right-4 top-4 rounded-xl border border-white/30 bg-white p-3 text-sm text-white shadow-lg backdrop-blur" style={{ direction: 'rtl' }}>
         <p className="mb-2 font-bold text-center text-[#0E8787]">{t('emergency.mapLegendTitle')}</p>

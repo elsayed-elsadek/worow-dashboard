@@ -196,7 +196,7 @@ const EmergencyMap = ({ activeFilters }: EmergencyMapProps) => {
           </svg>
         </div>
       ) : (
-        <div ref={mapContainer} className="h-[520px] min-h-[420px] w-full" />
+        <div ref={mapContainer} className="h-[420px] min-h-[420px] w-full" />
       )}
       <div className="pointer-events-none absolute right-4 top-4 rounded-xl border border-white/30 bg-white p-3 text-sm text-white shadow-lg backdrop-blur" style={{ direction: 'rtl' }}>
         <p className="mb-2 font-bold text-center text-[#0E8787]">{t('emergency.mapLegendTitle')}</p>
@@ -207,10 +207,7 @@ const EmergencyMap = ({ activeFilters }: EmergencyMapProps) => {
           <div className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-[#1E40AF]" />{t('emergency.mapLegendHospital')}</div>
         </div>
       </div>
-      {/* <div className="pointer-events-none absolute bottom-4 right-4 rounded-2xl border border-white/10 bg-[#1b0c10]/80 px-4 py-3 text-sm text-white backdrop-blur">
-        <p className="font-semibold">{t('emergency.caseTitle')}</p>
-        <p className="text-xs text-[#e2b9c2]">{t('emergency.values.location')}</p>
-      </div> */}
+     ?
     </div>
   )
 }
